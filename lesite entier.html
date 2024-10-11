@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 50vh;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-btn {
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .services {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            margin-bottom: 40px;
+        }
+
+        /* Services Section */
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .card {
+            width: 23%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            color: #ff5733;
+            margin-top: 15px;
+        }
+
+        .card p {
+            margin: 10px 0;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .card button:hover {
+            background-color: #ff7733;
+        }
+
+        /* About Section */
+    #about {
+        padding: 50px 0;
+        background-color: #f2f2f2;
+    }
+
+    #about h2 {
+        text-align: center;
+    }
+
+    .about-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about-text {
+        width: 60%;
+    }
+
+    #about .aboutb-container-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #about .aboutb-container-text p {
+        width: 70%;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .about-text ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .about-text ul li {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .about-image {
+        width: 35%;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+        .contact {
+            padding: 50px 20px;
+            background-color: #333;
+            color: #333;
+            text-align: center;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            padding: 10px;
+            background-color: #ff5733;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact form button:hover {
+            background-color: #ff7733;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: white;
+            color: #333;
+            padding: 20px 0;
+            text-align: start;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .footer-container div {
+            width: 22%;
+            margin: 10px;
+        }
+
+        .footer-container h3 {
+            color: #ff5733;
+            margin-bottom: 15px;
+        }
+
+        .footer-container a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-container a:hover {
+            color: #ff7733;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <nav>
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contactez-nous</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Bienvenue sur Notre Site</h1>
+            <p>Nous fournissons les meilleurs services pour vous.</p>
+            <a href="#services" class="hero-btn">Découvrir nos services</a>
+        </div>
+    </section>
+
+    <!-- Main Section - Services -->
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="services-container">
+            <div class="card">
+                <img src="./assets/img/Image.jpg" alt="Service 1">
+                <h3>Service 1</h3>
+                <p>Nous offrons un service de qualité pour tous vos besoins.</p>
+                <button>En savoir plus</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/Image.jpg" alt="Service 2">
+                <h3>Service 2</h3>
+                <p>Un service rapide et efficace pour votre entreprise.</p>
+                <button>En savoir plus</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/Image.jpg" alt="Service 3">
+                <h3>Service 3</h3>
+                <p>Solutions innovantes pour le développement web.</p>
+                <button>En savoir plus</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/Image.jpg" alt="Service 4">
+                <h3>Service 4</h3>
+                <p>Support technique pour tous vos projets numériques.</p>
+                <button>En savoir plus</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about">
+    <h2>À propos de Nous</h2>
+    <div class="aboutb-container-text">
+            <p>Nous sommes une entreprise spécialisée dans les solutions numériques innovantes. Depuis notre création, nous avons aidé des dizaines de clients à transformer leurs idées en réalité digitale grâce à notre expertise en développement web, design et stratégie digitale.</p>
+    </div>
+
+    <div class="about-container">
+        <div class="about-text">
+            <h3>Nos Valeurs</h3>
+            <ul>
+                <li>Innovation continue</li>
+                <li>Engagement envers la qualité</li>
+                <li>Priorité à la satisfaction client</li>
+                <li>Développement durable</li>
+            </ul>
+        </div>
+        <div class="about-image">
+            <img src="assets/img/about.webp" alt="À propos de nous">
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contactez-nous</h2>
+        <form>
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>À propos</h3>
+                <p>Nous sommes une entreprise spécialisée dans la prestation de services web innovants et de qualité.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contactez-nous</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Email: info@entreprise.com</p>
+                <p>Téléphone: +212 123 456 789</p>
+                <p>Adresse: 123, Rue Exemple, Casablanca, Maroc</p>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Youcode. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
